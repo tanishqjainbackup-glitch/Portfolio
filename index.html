@@ -1,31 +1,121 @@
-<!-- DELETE THIS SECTION -->
-<div class="project-block">
-  <div class="project-header">
-    <div>
-      <div class="project-tag">Zariya Productions · Short Film</div>
-      <h3 class="project-title">The Film He Acted In</h3>
-      <p class="project-desc">A college passion project that accidentally went viral. He co-wrote the script and played the lead role in a story about the subtle weight of unspoken expectations.</p>
-    </div>
-    <div class="project-meta">
-      <div class="project-meta-item"><span>Format</span>Short Film · YouTube</div>
-      <div class="project-meta-item"><span>Role</span>Lead Actor · Co-Scriptwriter</div>
-      <div class="project-meta-item"><span>Views</span>10,000+</div>
-    </div>
-  </div>
-  <div class="film-placeholder">
-    <div class="film-placeholder-inner">
-      <div class="film-play">▶</div>
-      <div class="film-label">Video Private or Removed</div>
-      <div class="film-sub">Check back later for the updated link</div>
-    </div>
-  </div>
-</div>
-<!-- STOP DELETING HERE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanishq Jain — Not the Jeweller</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<div class="contact-btns">
-  <!-- Link added here -->
-  <a href="https://www.linkedin.com/in/tanishq-jain-8b79241b0/" target="_blank" class="btn btn-outline">LinkedIn</a>
-  <a href="mailto:jaintanishq79@gmail.com" class="btn btn-primary">jaintanishq79@gmail.com</a>
-</div>
-<!-- Location changed to Bhopal here -->
-<p class="contact-tagline">+91 99934 31111 · Bhopal, India · (definitely not a jeweller)</p>
+:root {
+  --bg: #f7f3ed;
+  --black: #111008;
+  --blue: #5468e7;
+  --blue-light: #eaecfd;
+  --red: #e03030;
+  --cream: #faf7f2;
+  --muted: #7a756e;
+  --light: #c8c2b8;
+  --border: rgba(17,16,8,0.1);
+  --card: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CUSTOM CURSOR */
+.cursor {
+  position: fixed; width: 12px; height: 12px;
+  background: var(--blue); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: multiply;
+}
+.cursor.big { width: 40px; height: 40px; background: var(--blue); opacity: 0.3; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; height: 52px;
+  background: rgba(247,243,237,0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 0.05em;
+  color: var(--black);
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 12px; color: var(--muted); text-decoration: none;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--black); }
+
+/* SECTIONS */
+.hook-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 2.5rem 60px; max-width: 1100px; margin: 0 auto; position: relative; }
+.hook-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(64px, 11vw, 140px); line-height: 0.92; margin-bottom: 1.5rem; }
+.hook-headline .blue { color: var(--blue); }
+.hook-sub { font-family: 'Lora', serif; font-size: clamp(18px, 2.5vw, 26px); font-style: italic; color: var(--muted); max-width: 600px; line-height: 1.5; margin-bottom: 3rem; }
+.contact-section { background: var(--black); padding: 100px 2.5rem; text-align: center; }
+.contact-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 9vw, 110px); color: white; line-height: 0.9; margin-bottom: 0.5rem; }
+.contact-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn { display: inline-block; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.btn-primary { background: var(--blue); color: white; }
+.btn-outline { border: 1px solid rgba(255,255,255,0.2); color: white; }
+.contact-tagline { font-family: 'Lora', serif; font-style: italic; font-size: 14px; color: rgba(255,255,255,0.25); }
+
+@media (max-width: 768px) { .nav-links { display: none; } .cursor { display: none; } body { cursor: auto; } }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <div class="nav-logo">TJ<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="https://www.linkedin.com/in/tanishq-jain-8b79241b0/" target="_blank">LinkedIn</a></li>
+    <li><a href="#contact">Hire Me</a></li>
+  </ul>
+</nav>
+
+<section class="hook-section">
+  <p class="hook-eyebrow" style="text-transform: uppercase; font-size: 11px; letter-spacing: 0.18em; color: var(--muted); margin-bottom: 2rem;">Brand Strategist · Bhopal · Open to Schbang</p>
+  <h1 class="hook-headline"><span style="color: var(--light); text-decoration: line-through; text-decoration-color: var(--red);">TANISHQ</span><br><span class="blue">JAIN</span></h1>
+  <p class="hook-sub">No, he does <strong>not</strong> own the jewellery brand. <br>He does something arguably harder — <strong>he builds brands from nothing.</strong></p>
+</section>
+
+<section class="contact-section" id="contact">
+  <h2 class="contact-title">LET'S BUILD<br><span style="color: var(--blue);">SOMETHING.</span></h2>
+  <div class="contact-btns">
+    <a href="https://www.linkedin.com/in/tanishq-jain-8b79241b0/" target="_blank" class="btn btn-outline">LinkedIn</a>
+    <a href="mailto:jaintanishq79@gmail.com" class="btn btn-primary">jaintanishq79@gmail.com</a>
+  </div>
+  <p class="contact-tagline">+91 99934 31111 · Bhopal, India · (definitely not a jeweller)</p>
+</section>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+</script>
+
+</body>
+</html>
